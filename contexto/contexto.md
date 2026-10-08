@@ -1,12 +1,11 @@
 # Contexto completo — Enduro Life Colombia (`enduro-life-col`)
 
-Documento de contexto. Complementa el brand book (`brandbook.html`) y las reglas técnicas (`CLAUDE.md`). Aquí está el por qué de las decisiones, el historial, los textos exactos de la web y el backlog.
+Documento de contexto. Complementa el brand book (`brandbook.html`) y las reglas técnicas (`CLAUDE.md`). Vive en `contexto/` (no se publica en la web). Aquí está el por qué de las decisiones, el historial, los textos exactos de la web y el backlog.
 
 > **Actualización 2026-10-08 (verificado en la máquina):** algunas cosas de la sección 2 ya no eran ciertas. Lo real:
-> - El proyecto Vercel `enduro-life-webpage` está en el equipo **`pak14`** (no cuenta personal sin equipo) y **ya está conectado a Git** desde el 2026-09-30: repo `Pakpablo/enduro-life-webpage`, rama `main`. Cada push a `main` publica solo; cada push a otra rama crea una vista previa.
+> - El proyecto Vercel `enduro-life-webpage` está en el equipo **`pak14`** (no cuenta personal sin equipo) y **está conectado a Git** desde el 2026-09-30: repo `Pakpablo/enduro-life-col` (antes `enduro-life-webpage`, renombrado el 2026-10-08), rama `main`. Cada push a `main` publica solo; cada push a otra rama crea una vista previa.
 > - `gh` está instalado y con sesión iniciada (cuenta `Pakpablo`). `git` y `node` también están instalados.
-> - El repo **no** se ha renombrado a `enduro-life-col` (el permiso fue denegado). Para hacerlo: `gh repo rename enduro-life-col -R Pakpablo/enduro-life-webpage`. Vercel sigue conectado tras el rename.
-> - Backlog 1–3 hechos en la rama `organizar-assets` (pendiente de pasar a `main`). El HTML con assets reconstruye byte a byte el original: el aspecto no cambia.
+> - Backlog 1–3 hechos y publicados en `main`. El HTML con assets reconstruye byte a byte el original: el aspecto no cambia.
 
 ## 1. Quién es el dueño y cómo quiere trabajar
 - Dueño de Enduro Life Colombia (una de sus empresas; tiene otros negocios/proyectos, no mezclar). Se llama Pablo.
@@ -20,7 +19,7 @@ Documento de contexto. Complementa el brand book (`brandbook.html`) y las reglas
 ## 2. Entorno técnico
 - **Carpeta de trabajo:** `/root/projects/enduro-life-col` en un **VPS** Linux del dueño, usado vía **Bitvise** (SSH + SFTP).
 - **Producción:** https://enduro-life-webpage.vercel.app/ — proyecto Vercel `enduro-life-webpage`, equipo `pak14`, plan gratis. Conectado a GitHub (ver actualización arriba).
-- **GitHub:** `Pakpablo/enduro-life-webpage` (nombre deseado: `enduro-life-col`).
+- **GitHub:** https://github.com/Pakpablo/enduro-life-col
 - **El VPS NO es el hosting** del sitio (Vercel lo es); es solo el lugar de trabajo. Si luego se quiere servir desde el VPS: nginx + dominio + HTTPS (certbot) — decisión aparte, preguntar.
 - El conector de Vercel del chat no tiene acceso al equipo `pak14` (403); usar el CLI `vercel` con `--scope pak14`.
 - Analytics: activar **Vercel Web Analytics** desde el dashboard (además hay que añadir su script a las páginas).
@@ -42,6 +41,7 @@ Documento de contexto. Complementa el brand book (`brandbook.html`) y las reglas
 14. Ya creó la Comunidad de WhatsApp (~81 miembros en el grupo actual). Link de invitación: **pendiente**.
 15. Migración a Claude Code: carpeta en su PC → SFTP → `/root/projects/enduro-life-col`.
 16. (2026-10-08) Imágenes y fuente sacadas de base64 a `assets/`; logos de Drive en `assets/brand/` y originales .ai/.pdf en `brand-source/`; creado `brandbook.html`.
+17. (2026-10-08) Confirmado: Ban Ban Vega = Eduardo Vega, Don Pablo = Pablo Sáenz. La Laguna Enduro & Cross **no** es patrocinador: se quitó de la web y del brand book.
 
 ## 4. Textos actuales de la web (fuente: index.html)
 - **Título SEO:** Enduro Life Colombia | Comunidad de Enduro en Colombia
@@ -61,19 +61,19 @@ Documento de contexto. Complementa el brand book (`brandbook.html`) y las reglas
 ## 5. Datos del negocio
 - Disciplinas: **enduro, motocross y offroad**. Mercado: Colombia (español colombiano).
 - Pak (Pablo Ancizar, #88) es oficial Honda. En la foto del hero su moto lleva dorsal 182 y en la vertical 88 — no "corregir".
-- Placas de fundadores: Pak Ancizar 88, Don Pablo 51, Tomás Jaramillo 65, Mateo Jaramillo 55, Ban Ban Vega 5.
+- Placas de fundadores: Pak Ancizar (Pablo Ancizar) 88, Don Pablo (Pablo Sáenz) 51, Tomás Jaramillo 65, Mateo Jaramillo 55, Ban Ban Vega (Eduardo Vega) 5.
 - Calendario Fedemoto 2.º semestre (Enduro): 3–4 oct Quindío (4.ª válida), 7–8 nov Tolima (5.ª), 5–6 dic (6.ª y 7.ª según el póster).
 - Quiere **vender merch** y **monetizar** la comunidad sin frenar su crecimiento.
 
 ## 6. Backlog priorizado
 **Ahora (infra)**
-1. ~~Repo en GitHub y push a `main`~~ — ya existía. Pendiente opcional: renombrar a `enduro-life-col`.
+1. ~~Repo en GitHub `enduro-life-col` y push a `main`~~ — hecho (renombrado desde `enduro-life-webpage`).
 2. ~~Conectar Vercel al repo~~ — ya estaba conectado.
-3. ~~Sacar base64 a `assets/`~~ — hecho en rama `organizar-assets`, verificado idéntico. Falta pasarlo a `main`.
+3. ~~Sacar base64 a `assets/`~~ — hecho y publicado, verificado idéntico.
 4. Activar Vercel Analytics.
 
 **Después (contenido/SEO)**
-5. Link real de WhatsApp en todos los botones.
+5. Link real de WhatsApp en todos los botones (cuando exista; por ahora placeholder `#`).
 6. Copy a "enduro, motocross y offroad"; slogan oficial en el cierre; meta description actualizada.
 7. Favicon (icono E), imagen Open Graph, `sitemap.xml`, `robots.txt`, Google Search Console (explicar paso a paso).
 8. Revisión móvil.
@@ -87,9 +87,7 @@ Documento de contexto. Complementa el brand book (`brandbook.html`) y las reglas
 14. Dominio propio (cuando el dueño decida; preguntar costo).
 
 ## 7. Preguntas abiertas (preguntar, no asumir)
-- ¿Ban Ban Vega = Eduardo Vega y Don Pablo = Pablo Sáenz? (La web actual ya las muestra así.)
-- ¿La Laguna Enduro & Cross va como patrocinador de Pak? (Hoy aparece en la web, pero no está en la lista de la decisión 6.)
-- ¿Link de invitación de la Comunidad de WhatsApp?
+- ¿Link de invitación de la Comunidad de WhatsApp? (Aún no existe; los botones quedan con placeholder `#`.)
 - ¿Cuándo quiere dominio propio y con qué nombre?
 - ¿Tienda con cobro en línea o solo pedidos por WhatsApp al inicio?
 
