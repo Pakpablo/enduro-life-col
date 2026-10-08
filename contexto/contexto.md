@@ -3,7 +3,7 @@
 Documento de contexto. Complementa el brand book (`brandbook.html`) y las reglas técnicas (`CLAUDE.md`). Vive en `contexto/` (no se publica en la web). Aquí está el por qué de las decisiones, el historial, los textos exactos de la web y el backlog.
 
 > **Actualización 2026-10-08 (verificado en la máquina):** algunas cosas de la sección 2 ya no eran ciertas. Lo real:
-> - El proyecto Vercel `enduro-life-webpage` está en el equipo **`pak14`** (no cuenta personal sin equipo) y **está conectado a Git** desde el 2026-09-30: repo `Pakpablo/enduro-life-col` (antes `enduro-life-webpage`, renombrado el 2026-10-08), rama `main`. Cada push a `main` publica solo; cada push a otra rama crea una vista previa.
+> - El proyecto Vercel `enduro-life-col` (antes `enduro-life-webpage`, renombrado el 2026-10-08) está en el equipo **`pak14`** (no cuenta personal sin equipo) y **está conectado a Git** desde el 2026-09-30: repo `Pakpablo/enduro-life-col` (antes `enduro-life-webpage`, renombrado el 2026-10-08), rama `main`. Cada push a `main` publica solo; cada push a otra rama crea una vista previa.
 > - `gh` está instalado y con sesión iniciada (cuenta `Pakpablo`). `git` y `node` también están instalados.
 > - Backlog 1–3 hechos y publicados en `main`. El HTML con assets reconstruye byte a byte el original: el aspecto no cambia.
 
@@ -18,7 +18,7 @@ Documento de contexto. Complementa el brand book (`brandbook.html`) y las reglas
 
 ## 2. Entorno técnico
 - **Carpeta de trabajo:** `/root/projects/enduro-life-col` en un **VPS** Linux del dueño, usado vía **Bitvise** (SSH + SFTP).
-- **Producción:** https://enduro-life-webpage.vercel.app/ — proyecto Vercel `enduro-life-webpage`, equipo `pak14`, plan gratis. Conectado a GitHub (ver actualización arriba).
+- **Producción:** https://enduro-life-col.vercel.app/ y https://enduro-life-webpage.vercel.app/ (las dos sirven lo mismo) — proyecto Vercel `enduro-life-col`, equipo `pak14`, plan gratis. Conectado a GitHub (ver actualización arriba).
 - **GitHub:** https://github.com/Pakpablo/enduro-life-col
 - **El VPS NO es el hosting** del sitio (Vercel lo es); es solo el lugar de trabajo. Si luego se quiere servir desde el VPS: nginx + dominio + HTTPS (certbot) — decisión aparte, preguntar.
 - El conector de Vercel del chat no tiene acceso al equipo `pak14` (403); usar el CLI `vercel` con `--scope pak14`.
