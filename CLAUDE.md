@@ -2,6 +2,8 @@
 
 Sitio estático (HTML + CSS, sin build). Publicado en https://enduro-life-webpage.vercel.app
 
+**Leer también `docs/contexto.md`**: quién es el dueño, decisiones de marca, textos de la web, backlog y preguntas abiertas.
+
 ## Despliegue
 - GitHub: `Pakpablo/enduro-life-webpage` (rama `main`).
 - Vercel: proyecto `enduro-life-webpage`, equipo `pak14`. Conectado por Git: cada push a `main` publica a producción; cada push a otra rama crea una vista previa.
