@@ -42,6 +42,7 @@ Documento de contexto. Complementa el brand book (`brandbook.html`) y las reglas
 15. Migración a Claude Code: carpeta en su PC → SFTP → `/root/projects/enduro-life-col`.
 16. (2026-10-08) Imágenes y fuente sacadas de base64 a `assets/`; logos de Drive en `assets/brand/` y originales .ai/.pdf en `brand-source/`; creado `brandbook.html`.
 17. (2026-10-08) Confirmado: Ban Ban Vega = Eduardo Vega, Don Pablo = Pablo Sáenz. La Laguna Enduro & Cross **no** es patrocinador: se quitó de la web y del brand book.
+18. (2026-10-09) Nueva dirección: la web pasa a **marketplace multimarca + comunidad** (Next.js + Tailwind). Productos y precios de ejemplo, sin backend ni pagos. Todo el contenido anterior va en "Sobre Nosotros" (pestañas). Construida en la rama `marketplace` (vista previa), **pendiente de aprobación** antes de pasar a `main`.
 
 ## 4. Textos actuales de la web (fuente: index.html)
 - **Título SEO:** Enduro Life Colombia | Comunidad de Enduro en Colombia
@@ -81,7 +82,7 @@ Documento de contexto. Complementa el brand book (`brandbook.html`) y las reglas
 **Expansión**
 9. ~~Brand book visual (`brandbook.html`)~~ — hecho; PDF opcional pendiente.
 10. Calendario de carreras (datos en JSON, pasado/próximo automático; sumar 1.er semestre y eventos propios).
-11. Tienda/merch (3–5 productos; empezar con pedido por WhatsApp, sin pasarela de pago).
+11. Tienda/merch (3–5 productos; empezar con pedido por WhatsApp, sin pasarela de pago). → Diseño de marketplace hecho (demo) en rama `marketplace`; falta decidir productos reales y cómo se compra.
 12. Sección compra/venta alimentada desde la comunidad.
 13. Páginas de patrocinadores / paquetes para marcas.
 14. Dominio propio (cuando el dueño decida; preguntar costo).
