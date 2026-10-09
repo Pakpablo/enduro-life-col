@@ -1,6 +1,8 @@
 # Enduro Life Colombia — sitio web
 
-Sitio estático (HTML + CSS, sin build). Publicado en https://enduro-life-col.vercel.app (también https://enduro-life-webpage.vercel.app)
+Next.js 16 (App Router) + Tailwind CSS 4, en JavaScript. Publicado en https://enduro-life-col.vercel.app (también https://enduro-life-webpage.vercel.app)
+
+Esta versión de Next.js es nueva: antes de usar una API, leer la guía en `node_modules/next/dist/docs/` (ver `AGENTS.md`).
 
 **Leer también `contexto/contexto.md`**: quién es el dueño, decisiones de marca, textos de la web, backlog y preguntas abiertas.
 
@@ -11,17 +13,25 @@ Sitio estático (HTML + CSS, sin build). Publicado en https://enduro-life-col.ve
 - CLI: usar `--scope pak14`.
 
 ## Estructura
-- `index.html` — página principal.
-- `brandbook.html` — manual de marca (`/brandbook`).
-- `assets/fonts/` — Trackdrift (títulos y números).
-- `assets/img/` — imágenes que usa la web (fotos, logos del sitio, placas de pilotos, patrocinadores).
-- `assets/brand/logos/` — PNG oficiales de Drive (logo Enduro Life, isotipos, placas de números).
-- `brand-source/` — originales .ai/.pdf (RGB y CMYK). Excluido del deploy por `.vercelignore`.
+- `app/page.js` — página principal: arma las secciones en orden (Header, Hero, Marketplace, Comunidad, Marcas, Sobre Nosotros, Footer).
+- `app/layout.js` — fuentes (Trackdrift local, Barlow) y textos para Google.
+- `app/globals.css` — colores de marca (`@theme`) y utilidades (`btn-skew`, `stripes`).
+- `components/` — una pieza por archivo. `StoreProvider.js` guarda carrito, filtros y avisos (todo en el navegador).
+- `constants/marketplaceData.js` — **datos de ejemplo**: productos, marcas, categorías, eventos, fundadores, patrocinadores, link de WhatsApp.
+- `public/assets/` — imágenes y fuente (se sirven en `/assets/...`). `public/brandbook.html` se sirve en `/brandbook`.
+- `brand-source/` — originales .ai/.pdf (RGB y CMYK). No se publica (`.vercelignore`).
+
+## Comandos
+- `npm run dev` — ver la web en local mientras se edita.
+- `npm run build` — comprobar que compila antes de subir.
+- `npx eslint .` — revisar el código.
 
 ## Reglas
-- Nunca incrustar imágenes ni fuentes en base64; guardarlas en `assets/` y usar rutas relativas.
+- Nunca incrustar imágenes ni fuentes en base64; guardarlas en `public/assets/`.
+- Marketplace sin backend: productos y precios son de ejemplo hasta que el dueño decida otra cosa. No publicar en `main` sin su visto bueno.
+- Usamos `<img>` normal, no `next/image`, para no gastar la cuota gratuita de optimización de Vercel.
 - Nombres de archivo en minúsculas con guiones (`tomas-jaramillo.png`).
-- Colores: variables CSS en `:root` de cada página (`--dirt-black`, `--rust`, `--bone`, `--khaki`...). Colores del logo: naranja `#FF6D00`, rojo `#F8000D`, rojo números `#D50514`.
+- Colores: clases Tailwind de marca (`bg-dirt`, `text-rust`, `text-bone`, `text-khaki`, `bg-blaze`...), definidas en `app/globals.css`. Colores del logo: naranja `#FF6D00`, rojo `#F8000D`, rojo números `#D50514`.
 - Explicar los cambios en español sencillo: el dueño es principiante.
 
 ## Fuentes de los archivos de marca

@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+/* Colores y fuentes de la marca (ver brandbook) */
+@theme {
+  --color-dirt: #15130f;
+  --color-dirt-2: #1d1a14;
+  --color-dirt-3: #26221a;
+  --color-rust: #c8102e;
+  --color-rust-dark: #8a0f1f;
+  --color-khaki: #8a9a5b;
+  --color-bone: #ede7dd;
+  --color-steel: #4a4a45;
+  --color-blaze: #ff6d00;
+
+  --font-display: var(--font-trackdrift), sans-serif;
+  --font-sans: var(--font-barlow), sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: var(--color-dirt);
+  color: var(--color-bone);
+}
+
+/* Botón inclinado, estilo de la marca */
+@utility btn-skew {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transform: skewX(-8deg);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.85rem;
+  padding: 0.8rem 1.4rem;
+  transition: transform 0.15s, background-color 0.2s, color 0.2s;
+  & > * {
+    transform: skewX(8deg);
+  }
+  &:hover {
+    transform: skewX(-8deg) translateY(-2px);
+  }
+}
+
+@utility stripes {
+  background-image: repeating-linear-gradient(
+    -20deg,
+    var(--color-blaze) 0 14px,
+    var(--color-rust) 14px 28px
+  );
+}
+
+@keyframes toast-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
